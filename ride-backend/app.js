@@ -13,10 +13,12 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+
 app.use(
   rateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
-    max: 60, // limit each IP
+    max: 600, // limit each IP
     standardHeaders: true,
     legacyHeaders: false,
     message: {
